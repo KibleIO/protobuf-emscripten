@@ -64,7 +64,7 @@ namespace protobuf {
 namespace internal {
 
 #if defined(GOOGLE_PROTOBUF_ARCH_POWER)
-#if defined(_LP64) || defined(__LP64__)
+#if (defined(_LP64) || defined(__LP64__)) && !defined(EMSCRIPTEN)
 typedef int32 Atomic32;
 typedef intptr_t Atomic64;
 #else
